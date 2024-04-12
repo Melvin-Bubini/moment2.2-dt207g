@@ -1,0 +1,250 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0%;
+  padding: 0%;
+  line-height: 150%;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #efbc9b;
+  align-items: center;
+  display: flex;
+}
+
+#logo {
+  width: 5em;
+}
+
+#logo-text {
+  color: #000;
+  width: 15%;
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+#open-menu, #nav-menu {
+  display: none;
+}
+
+#bigScreenList {
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+  margin-right: 1em;
+  list-style-type: none;
+  display: flex;
+}
+
+.menyLänkar {
+  color: #000;
+  margin-bottom: 0%;
+  padding: .5em;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration: none;
+}
+
+.menyLänkar:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #e89f6f;
+  border: 3px solid #000;
+}
+
+@media screen and (width <= 800px) {
+  #bigScreenList {
+    display: none;
+  }
+
+  #open-menu {
+    display: flex;
+  }
+
+  nav {
+    z-index: 1000;
+    background-color: #efbc9b;
+    width: 50%;
+    height: 100vh;
+    font-size: 26px;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 10px #000;
+  }
+
+  nav ul {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  nav li {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  nav a {
+    color: #000;
+    margin-top: 0%;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 150%;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .menu-text {
+    color: #000;
+  }
+}
+
+main {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+footer {
+  background-color: #efbc9b;
+  flex-direction: column;
+  width: 100vw;
+  margin: 2em 0% 0%;
+  display: flex;
+}
+
+footer p {
+  width: fit-content;
+  margin-top: 0%;
+  margin-left: 2em;
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@media (prefers-color-scheme: light) {
+  header, footer, nav, .menu-btn {
+    background-color: #efbc9b;
+  }
+
+  body {
+    background-color: #9cafaa;
+  }
+
+  p, h1, h2, li, ul, .courseplan:hover, span, label, .formRubrik {
+    color: #000;
+  }
+
+  .courseplan {
+    color: #00f;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  header, footer, nav, .menu-btn {
+    background-color: #d06621;
+  }
+
+  body {
+    background-color: #394643;
+  }
+
+  p, h1, h2, li, ul, .courseplan:hover, span, label, .formRubrik {
+    color: #fcfcfc;
+  }
+}
+
+#todoForm {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  display: flex;
+}
+
+#todoInput {
+  border: 2px solid #000;
+  width: 100%;
+  margin: 0% 0 2em;
+  padding: 0%;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+#priorityInput {
+  text-align: center;
+  border: 2px solid #000;
+  margin: 0% 0 2em;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+label {
+  margin-bottom: 0%;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+#addTodoBtn {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 2%;
+  width: 5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+#addTodoBtn:hover {
+  cursor: pointer;
+}
+
+#delete_localStrgBtn {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 2%;
+  width: 4em;
+  margin-bottom: 1em;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+#delete_localStrgBtn:hover {
+  cursor: pointer;
+}
+
+#delete_todo {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 2%;
+  width: 2em;
+  margin-bottom: 1em;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 150%;
+}
+/*# sourceMappingURL=index.b10d73a7.css.map */
