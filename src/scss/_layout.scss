@@ -129,6 +129,11 @@ main {
     @include base.center-element;
 }
 
+#about {
+    @include base.center-element;
+    padding: 1em;
+}
+
 
 // Footer
 footer {

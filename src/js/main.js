@@ -2,8 +2,10 @@
 
 let url = "http://127.0.0.1:3000/api/cv";
 
-createCv("Nordic Green Design", "leverantör", "Spånga");
-getData();
+let cvArticle = document.getElementById('cvArticle')
+
+getData(); // Hämta datan när sidan laddas
+
 
 
 async function getData() {
@@ -11,7 +13,7 @@ async function getData() {
 
     const data = await response.json();
 
-    console.table(data);
+    displayCvData(data.results); // Visa datan när den har hämtats
 }
 
 async function createCv(companyname, jobtitle, location) {
@@ -32,6 +34,75 @@ async function createCv(companyname, jobtitle, location) {
     console.log(data);
 }
 
+function displayCvData(cvData) {
+    cvArticle.innerHTML = ""; // Rensa tidigare data
+
+    cvData.forEach(cv => {
+        let cvElement = document.createElement("div");
+        cvElement.classList.add("cv");
+
+        let companyNameElement = document.createElement("h2");
+        companyNameElement.textContent = cv.companyname;
+
+        let jobTitleElement = document.createElement("p");
+        jobTitleElement.textContent = "Jobbtitel: " + cv.jobtitle;
+
+        let locationElement = document.createElement("p");
+        locationElement.textContent = "Plats: " + cv.location;
+
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Ta bort";
+        deleteButton.addEventListener("click", async () => {
+            await deleteCv(cv.id); // Anropa funktionen för att ta bort CV-informationen
+            getData(); // Uppdatera datan på skärmen efter borttagning
+        });
+
+        cvElement.appendChild(companyNameElement);
+        cvElement.appendChild(jobTitleElement);
+        cvElement.appendChild(locationElement);
+        cvElement.appendChild(deleteButton); // Lägg till knappen för att ta bort
+
+        cvArticle.appendChild(cvElement);
+    });
+}
+
+async function deleteCv(cvId) { // Lägg till cvId som en parameter
+    try {
+        const response = await fetch(`${url}/${cvId}`, {
+            method: "DELETE"
+        });
+
+        if (!response.ok) {
+            throw new Error("Kunde inte ta bort CV från servern.");
+        }
+
+        // Ta bort CV från skärmen
+        const cvElement = document.getElementById(`cv_${cvId}`);
+        if (cvElement) {
+            cvElement.remove();
+        } else {
+            console.warn(`CV med id ${cvId} hittades inte på skärmen.`);
+        }
+
+        return true; // Returnera true om borttagningen lyckades
+    } catch (error) {
+        console.error("Ett fel uppstod vid borttagning av CV:", error);
+        return false; // Returnera false om borttagningen misslyckades
+    }
+}
+
+
 document.getElementById('cvForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Förhindra standardformulärinsändning
-})
+
+    let companyname = document.getElementById('companynameInput').value;
+    let jobtitle = document.getElementById('jobtitleInput').value;
+    let location = document.getElementById('locationInput').value;
+
+    createCv(companyname, jobtitle, location);
+
+    // Rensa inputfälten efter att CV-informationen har skickats
+    document.getElementById('companynameInput').value = "";
+    document.getElementById('jobtitleInput').value = "";
+    document.getElementById('locationInput').value = "";
+});

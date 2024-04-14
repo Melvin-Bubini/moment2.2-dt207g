@@ -118,6 +118,14 @@ main {
   display: flex;
 }
 
+#about {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  display: flex;
+}
+
 footer {
   background-color: #efbc9b;
   flex-direction: column;
