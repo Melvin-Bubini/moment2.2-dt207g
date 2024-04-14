@@ -13,7 +13,16 @@ async function getData() {
 
     const data = await response.json();
 
-    displayCvData(data.results); // Visa datan när den har hämtats
+    if (data.results.length > 0) {
+        cvArticle.style.display = "block"; // Visa cvArticle om det finns data
+        cvArticle.style.border = "2px solid black";
+        cvArticle.style.padding = "1em";
+        displayCvData(data.results); // Visa datan när den har hämtats
+    } else {
+        cvArticle.style.display = "none"; // Dölj cvArticle om det inte finns någon data
+        cvArticle.style.border = "none";
+        cvArticle.style.padding = "none";
+    }
 }
 
 async function createCv(companyname, jobtitle, location) {

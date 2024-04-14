@@ -19,7 +19,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    background-color: base.$main-color;
+    background-color: black;
 }
 
 #logo {
@@ -62,11 +62,63 @@ header {
 .menyLänkar:hover {
     cursor: pointer;
     color: white;
-    background-color: darken(base.$main-color, 10%);
     border: solid black 3px;
 }
 
+/*menyknapp för att öppna menyn*/
 
+#open-menu {
+    margin-left: auto;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: solid black 2px;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.menu-btn .menu-text {
+    display: inline-block;
+}
+
+.menu-btn:hover {
+    box-shadow: 0 0px 5px black;
+}
+
+.menu-icon {
+    margin-right: 10Px;
+}
+
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+/*menyknapp för stäng*/
+.close {
+    padding: 10px 15px;
+}
+
+/*roterar två streck till ett kryss*/
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
 
 /* MOBILLÄGE */
 @media screen and (max-width: 800px) {
@@ -80,7 +132,6 @@ header {
     }
 
     nav {
-        background-color: base.$main-color;
         box-shadow: 0 0px 10px black;
         font-size: 26px;
         position: absolute;
@@ -90,6 +141,7 @@ header {
         display: none;
         z-index: 1000;
         width: 50%;
+        background-color: black;
     }
 
     nav ul {
@@ -122,7 +174,6 @@ header {
     }
 }
 
-
 // Main
 
 main {
@@ -132,6 +183,49 @@ main {
 #about {
     @include base.center-element;
     padding: 1em;
+}
+
+#cvArticle {
+    width: 50%;
+    background-color: white;
+}
+
+#cvForm {
+    width: 100%;
+    @include base.center-element;
+    margin-top: 1em;
+
+    button {
+        background-color: rgb(0, 203, 0);
+        border: 2px solid black;
+        @include base.p-styles;
+    }
+
+    button:hover {
+        background-color: rgb(106, 253, 106);
+        cursor: pointer;
+    }
+}
+
+input {
+    width: 30%;
+}
+
+.cv {
+    border: 2px solid black;
+    padding: 1em;
+    margin-top: 1em;
+
+    button {
+        background-color: red;
+        border: 2px solid black;
+        @include base.p-styles;
+    }
+
+    button:hover {
+        background-color: rgb(250, 118, 118);
+        cursor: pointer;
+    }
 }
 
 
@@ -164,7 +258,7 @@ footer p {
         background-color: base.$main-color;
     }
 
-    body {
+    body, .cv {
         background-color: base.$background-color;
     }
 
@@ -194,7 +288,7 @@ footer p {
         background-color: base.$main-color-dark;
     }
 
-    body {
+    body, .cv {
         background-color: base.$background-color-dark;
     }
 

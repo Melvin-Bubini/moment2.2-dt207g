@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background-color: #efbc9b;
+  background-color: #000;
   align-items: center;
   display: flex;
 }
@@ -52,8 +52,58 @@ header {
 .menyLänkar:hover {
   cursor: pointer;
   color: #fff;
-  background-color: #e89f6f;
   border: 3px solid #000;
+}
+
+#open-menu {
+  margin-left: auto;
+}
+
+.menu-btn {
+  cursor: pointer;
+  border: 2px solid #000;
+  align-items: center;
+  margin-right: 5%;
+  padding: 8px 15px;
+  display: flex;
+}
+
+.menu-btn .menu-text {
+  display: inline-block;
+}
+
+.menu-btn:hover {
+  box-shadow: 0 0 5px #000;
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.bars {
+  background-color: #000;
+  width: 20px;
+  height: 3px;
+  margin: 5px 0;
+  display: block;
+}
+
+.close {
+  padding: 10px 15px;
+}
+
+.cross1 {
+  width: 25px;
+  position: relative;
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.cross2 {
+  width: 25px;
+  position: relative;
+  top: -3px;
+  transform: rotate(135deg);
 }
 
 @media screen and (width <= 800px) {
@@ -67,7 +117,7 @@ header {
 
   nav {
     z-index: 1000;
-    background-color: #efbc9b;
+    background-color: #000;
     width: 50%;
     height: 100vh;
     font-size: 26px;
@@ -126,8 +176,60 @@ main {
   display: flex;
 }
 
+#cvArticle {
+  background-color: #fff;
+  width: 50%;
+}
+
+#cvForm {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+}
+
+#cvForm button {
+  background-color: #00cb00;
+  border: 2px solid #000;
+  margin-top: 0%;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+#cvForm button:hover {
+  cursor: pointer;
+  background-color: #6afd6a;
+}
+
+input {
+  width: 30%;
+}
+
+.cv {
+  border: 2px solid #000;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.cv button {
+  background-color: red;
+  border: 2px solid #000;
+  margin-top: 0%;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+.cv button:hover {
+  cursor: pointer;
+  background-color: #fa7676;
+}
+
 footer {
-  background-color: #efbc9b;
+  background-color: #9befd9;
   flex-direction: column;
   width: 100vw;
   margin: 2em 0% 0%;
@@ -146,10 +248,10 @@ footer p {
 
 @media (prefers-color-scheme: light) {
   header, footer, nav, .menu-btn {
-    background-color: #efbc9b;
+    background-color: #9befd9;
   }
 
-  body {
+  body, .cv {
     background-color: #9cafaa;
   }
 
@@ -164,95 +266,15 @@ footer p {
 
 @media (prefers-color-scheme: dark) {
   header, footer, nav, .menu-btn {
-    background-color: #d06621;
+    background-color: #21d0a2;
   }
 
-  body {
+  body, .cv {
     background-color: #394643;
   }
 
   p, h1, h2, li, ul, .courseplan:hover, span, label, .formRubrik {
     color: #fcfcfc;
   }
-}
-
-#todoForm {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  display: flex;
-}
-
-#todoInput {
-  border: 2px solid #000;
-  width: 100%;
-  margin: 0% 0 2em;
-  padding: 0%;
-  font-family: sans-serif;
-  font-size: 1em;
-  line-height: 150%;
-}
-
-#priorityInput {
-  text-align: center;
-  border: 2px solid #000;
-  margin: 0% 0 2em;
-  font-family: sans-serif;
-  font-size: 1em;
-  line-height: 150%;
-}
-
-label {
-  margin-bottom: 0%;
-  font-family: sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  line-height: 150%;
-}
-
-#addTodoBtn {
-  background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 2%;
-  width: 5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-family: sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  line-height: 150%;
-}
-
-#addTodoBtn:hover {
-  cursor: pointer;
-}
-
-#delete_localStrgBtn {
-  background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 2%;
-  width: 4em;
-  margin-bottom: 1em;
-  font-family: sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  line-height: 150%;
-}
-
-#delete_localStrgBtn:hover {
-  cursor: pointer;
-}
-
-#delete_todo {
-  background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 2%;
-  width: 2em;
-  margin-bottom: 1em;
-  font-family: sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  line-height: 150%;
 }
 /*# sourceMappingURL=index.b10d73a7.css.map */
