@@ -77,6 +77,11 @@ document.getElementById("cvForm").addEventListener("submit", function(event) {
     let companyname = document.getElementById("companynameInput").value;
     let jobtitle = document.getElementById("jobtitleInput").value;
     let location = document.getElementById("locationInput").value;
+    // Kontrollera om något obligatoriskt fält är tomt
+    if (!companyname || !jobtitle || !location) {
+        alert("V\xe4nligen fyll i alla f\xe4lt."); // Visa felmeddelande
+        return; // Avbryt funktionen om ett fält är tomt
+    }
     createCv(companyname, jobtitle, location);
     // Rensa inputfälten efter att CV-informationen har skickats
     document.getElementById("companynameInput").value = "";
